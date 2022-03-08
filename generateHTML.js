@@ -1,8 +1,7 @@
-
-function managerCard ()
+// function managerCard ()
 
 function generateHTML(response) {
-  return `
+  let htmlString1 = `
     < !DOCTYPE html >
         <html lang="en-US">
 
@@ -19,8 +18,10 @@ function generateHTML(response) {
                  </header>
             </div>
             
-            <section class="manager">
-                <div class="box" id="manager">    
+            <section class="manager">`;
+  //for loop to pull out manager information - is the role === "Manager"
+
+  let managerHTML = `                <div class="box" id="manager">    
                     <div class="title"><h2>${response.roll}</h2></div>
                     <div class="info">
                         <p>${response.name}</p>
@@ -29,11 +30,13 @@ function generateHTML(response) {
                         <p>${response.officeNumber}</p>
 
                     </div>
-                </div>
-            </section>
+                </div>`;
+  let HTMLString2 = `          </section>
 
-            <section class="engineer">
-                <div class="box" id="engineer">    
+            <section class="engineer">`;
+  //for loop to pull out engineer information
+
+  let engineerHTML = `                <div class="box" id="engineer">    
                     <div class="title"><h2>${response.roll}</h2></div>
                 
                     <div class="info">
@@ -42,11 +45,15 @@ function generateHTML(response) {
                         <p>${response.emailAddress}</p>
                         <p>${response.gitHubUserID}</p>
                     </div>
-                </div>
-            </section>
+                </div>`;
+
+  let HTMLString3 = `           </section>
             
-            <section class="intern">
-                <div class="box" id="intern">    
+            <section class="intern">`;
+
+  //for loop to pull out intern informatin
+
+  let internHTML = `                <div class="box" id="intern">    
                     <div class="title"><h2>${response.roll}</h2></div>
                 
                     <div class="info">
@@ -55,8 +62,9 @@ function generateHTML(response) {
                         <p>${response.emailAddress}</p>
                         <p>${response.school}</p>
                     </div>
-                </div>
-            </section>
+                </div>`;
+
+  let HTMLString4 = `               </section >
 
 
             
@@ -66,3 +74,5 @@ function generateHTML(response) {
         </html>
 `;
 }
+
+module.exports = generateHTML;
