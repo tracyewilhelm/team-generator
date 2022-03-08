@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffffd4;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  /* Sets border to bottom only */
+  border-bottom: 10px solid darkblue;
+  background-color: #999900;
+}
+
+h1 {
+  text-align: center;
+  line-height: 100px;
+}
+
+section {
+  width: auto;
+  margin: 20px auto;
+  border-bottom: 5px solid darkblue;
+}
+
+.title {
+  text-align: center;
+  line-height: 100px;
+  border-bottom: 10px solid darkred;
+}
+
+.box {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+}

@@ -1,4 +1,22 @@
-{
+
+{"name": "team-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tracyewilhelm/team-generator"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tracyewilhelm/team-generator/issues"
+  },
+  "homepage": "https://github.com/tracyewilhelm/team-generator#readme",
   "dependencies": {
     "inquirer": "^8.2.0",
     "jest": "^27.5.1"
