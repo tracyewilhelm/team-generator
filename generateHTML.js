@@ -1,8 +1,9 @@
-// function managerCard ()
+// console.log(response);
 
-function generateHTML(response) {
-  let htmlString1 = `
-    < !DOCTYPE html >
+const generateHTML = (response) => {
+  let htmlHead = () => {
+    let htmlString1 = `
+    <!DOCTYPE html>
         <html lang="en-US">
 
             <head>
@@ -19,10 +20,14 @@ function generateHTML(response) {
             </div>
             
             <section class="manager">`;
-  //for loop to pull out manager information - is the role === "Manager"
+    return htmlString1;
+  };
 
-  let managerHTML = `                <div class="box" id="manager">    
-                    <div class="title"><h2>${response.roll}</h2></div>
+  //for loop to pull out manager information - is the role === "Manager"
+  let managerHTML = () => {
+    let manager = `
+                    <div class="box" id="manager">    
+                    <div class="title"><h2>Managers</h2></div>
                     <div class="info">
                         <p>${response.name}</p>
                         <p>${response.employeeID}</p>
@@ -31,13 +36,20 @@ function generateHTML(response) {
 
                     </div>
                 </div>`;
-  let HTMLString2 = `          </section>
+    return manager;
+  };
+
+  let HTMLString2 = () => {
+    let string2 = `          </section>
 
             <section class="engineer">`;
+    return string2;
+  };
   //for loop to pull out engineer information
 
-  let engineerHTML = `                <div class="box" id="engineer">    
-                    <div class="title"><h2>${response.roll}</h2></div>
+  let engineerHTML = () => {
+    let engineer = `                <div class="box" id="engineer">    
+                    <div class="title"><h2>Engineers</h2></div>
                 
                     <div class="info">
                         <p>${response.name}</p>
@@ -46,15 +58,20 @@ function generateHTML(response) {
                         <p>${response.gitHubUserID}</p>
                     </div>
                 </div>`;
+    return engineer;
+  };
 
-  let HTMLString3 = `           </section>
+  let HTMLString3 = () => {
+    let string3 = `           </section>
             
             <section class="intern">`;
+    return string3;
+  };
 
   //for loop to pull out intern informatin
-
-  let internHTML = `                <div class="box" id="intern">    
-                    <div class="title"><h2>${response.roll}</h2></div>
+  let internHTML = () => {
+    let intern = `                <div class="box" id="intern">    
+                    <div class="title"><h2>Interns</h2></div>
                 
                     <div class="info">
                         <p>${response.name}</p>
@@ -63,8 +80,11 @@ function generateHTML(response) {
                         <p>${response.school}</p>
                     </div>
                 </div>`;
+    return intern;
+  };
 
-  let HTMLString4 = `               </section >
+  let HTMLString4 = () => {
+    let string4 = `               </section >
 
 
             
@@ -73,6 +93,16 @@ function generateHTML(response) {
 
         </html>
 `;
-}
-
+    return string4;
+  };
+  return (
+    htmlHead() +
+    managerHTML() +
+    HTMLString2() +
+    engineerHTML() +
+    HTMLString3() +
+    internHTML() +
+    HTMLString4()
+  );
+};
 module.exports = generateHTML;

@@ -153,27 +153,30 @@ let createIntern = function () {
 let finishTeam = function () {
   const finalTeam = [];
   for (let member of teamMembers) {
-    let name = member.getName;
-    let employeeID = member.getID;
-    let email = member.getEmail;
-    let role = member.getRole;
+    let name = member.getName();
+    let employeeID = member.getID();
+    let email = member.getEmail();
+    let role = member.getRole();
 
     if (role === "Manager") {
-      extra = member.getOfficeNumber;
+      extra = member.getOfficeNumber();
     } else if (role === "Engineer") {
-      extra = member.getgitHub;
+      extra = member.getgitHub();
     } else {
-      extra = member.getSchool;
+      extra = member.getSchool();
     }
     teamObject = { name, employeeID, email, role, extra };
     finalTeam.push(teamObject);
   }
-  createHTML(data);
+  createHTML(finalTeam);
 };
 
-const createHTML = function (data) {
-  const HTML = generateHTML(data);
-  fs.writeFile("src/index.html", HTML, (err) => {
+const createHTML = function (response) {
+  console.log(response);
+  const HTML = generateHTML(response);
+  fs.writeFile("./src/index.html", generateHTML(response), (err) => {
     err ? console.error(err) : console.log("Success");
   });
 };
+
+init();
