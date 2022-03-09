@@ -172,9 +172,9 @@ let finishTeam = function () {
 };
 
 const createHTML = function (response) {
-  console.log(response);
-  const HTML = generateHTML(response);
-  fs.writeFile("./src/index.html", generateHTML(response), (err) => {
+  console.log(response[0].name + "line 175 of index.js");
+  // const HTML = generateHTML(response);
+  fs.writeFile("./dist/index.html", generateHTML(response), (err) => {
     err ? console.error(err) : console.log("Success");
   });
 };

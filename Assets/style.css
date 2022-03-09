@@ -18,6 +18,10 @@ header {
 }
 
 h1 {
+  height: 120px;
+  padding-top: 80px;
+  background: darkblue;
+  color: white;
   text-align: center;
   line-height: 100px;
 }
@@ -39,11 +43,16 @@ section {
   width: 33.33%;
   padding: 50px;
 }
+/* this is Chad's */
 <style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
+   * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #ffffd4;
+}
     h1 {
         height: 120px;
         padding-top: 80px;
